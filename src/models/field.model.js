@@ -103,9 +103,6 @@ const fieldsSchema = mongoose.Schema(
     }
 );
 
-// add plugin that converts mongoose to json
-fieldsSchema.plugin(toJSON);
-fieldsSchema.plugin(paginate);
 
 /**
  * @typedef Field

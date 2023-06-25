@@ -28,7 +28,25 @@ const toJSON = (schema) => {
         }
       });
 
-      ret.id = ret._id.toString();
+
+      if(ret.company_name){
+        ret.company_id = ret._id.toString();
+      }else if(ret.candidate_email){
+        ret.candidate_id = ret._id.toString();
+      }else if(ret.job_name){
+        ret.job_id = ret._id.toString();
+      }else if(ret.contact_email){
+        ret.contact_id = ret._id.toString();
+      }else if(ret.account_name){
+        ret.account_id = ret._id.toString();
+      }else if(ret.user_email){
+        ret.user_id = ret._id.toString();
+      }else if(ret.field_name){
+        ret.field_id = ret._id.toString();
+      }else{
+        ret.id = ret._id.toString();
+      }
+
       delete ret._id;
       delete ret.__v;
       delete ret.createdAt;

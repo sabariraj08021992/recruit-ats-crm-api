@@ -32,6 +32,10 @@ const generateSchema = async (entity_type) => {
             if(field['required'] == true){
                 obj["required"] = true;
             }
+
+            if(field['unique'] == true){
+                obj.unique = true;
+            }
            
             if(field["is_array"]){
                 if(!schemaObj[field["section"]]){
@@ -45,7 +49,7 @@ const generateSchema = async (entity_type) => {
             }
         }
     }
-    // console.log(schemaObj)
+    //  console.log(schemaObj)
     return { 
         "schema": schemaObj,
         "timestamps":{

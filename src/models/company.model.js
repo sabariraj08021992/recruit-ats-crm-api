@@ -10,7 +10,21 @@ const setCompanyModel = async () => {
     let timeStampObj = modelResponse['timestamps']
     const companySchema = mongoose.Schema(
         {   
-            ...schemaObj
+            ...schemaObj,
+            company_teams:{
+                type: mongoose.SchemaTypes.ObjectId,
+                ref:"User",
+                default:[]
+            },
+            company_contacts:{
+                type: mongoose.SchemaTypes.ObjectId,
+                ref:"Contact",
+                default:[]
+            },
+            company_is_pulic:{
+                type: Boolean,
+                default:true
+            }
         },
         {
             ...timeStampObj

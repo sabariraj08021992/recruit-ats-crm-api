@@ -4,6 +4,23 @@ const { generateDynamicFormValidatorSchema } = require("./dynamic-form.validatio
 
 const { password, objectId } = require('./custom.validation');
 
+const getCompanies = {
+    query: Joi.object().keys({
+        sort_by:Joi.string().optional(),
+        limit: Joi.number().integer(),
+        page: Joi.number().integer(),
+    })
+};
+
+const getCompaniesWithFilterSort = {
+    body: Joi.object().keys({
+        filterModel: Joi.array().optional(),
+        sortModel: Joi.array().optional(),
+        limit:Joi.number().optional(),
+        page:Joi.number().optional()
+    })
+}
+
 const createCompany = async (req, res, next) => {
     validationRule = await generateDynamicFormValidatorSchema("company")
     validationRule = {
@@ -22,21 +39,13 @@ const createCompany = async (req, res, next) => {
     }
 };
 
-const getCompanies = {
-    query: Joi.object().keys({
-        sort_by: Joi.string(),
-        limit: Joi.number().integer(),
-        page: Joi.number().integer(),
-    }),
-};
-
-const getCompany = {
+const getCompanyById = {
     params: Joi.object().keys({
         companyId: Joi.string().custom(objectId),
     }),
 };
 
-const updateCompany = async (req, res, next) => {
+const updateCompanyById = async (req, res, next) => {
     validationRule = await generateDynamicFormValidatorSchema("company")
     validationRule = {
         ...validationRule,
@@ -57,18 +66,40 @@ const updateCompany = async (req, res, next) => {
     }
 };
 
-const deleteCompany = {
+const deleteCompanyById = {
     params: Joi.object().keys({
         companyId: Joi.string().custom(objectId),
     }),
 };
-  
 
+const bulkInsertCompanies = {
+    body: Joi.object().keys({
+        companyArray: Joi.array().required()
+      }),
+};
+
+const bulkUpdateCompanies = {
+    body: Joi.object().keys({
+        ids: Joi.array().required(),
+        set:Joi.object().required()
+      }),
+};
+
+const bulkDeleteCompanies = {
+    body: Joi.object().keys({
+        ids: Joi.array().required()
+      }),
+};
+  
 module.exports = {
     createCompany,
     getCompanies,
-    getCompany,
-    updateCompany,
-    deleteCompany
+    getCompanyById,
+    getCompaniesWithFilterSort,
+    updateCompanyById,
+    deleteCompanyById,
+    bulkInsertCompanies,
+    bulkUpdateCompanies,
+    bulkDeleteCompanies
 };
   

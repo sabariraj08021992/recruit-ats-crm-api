@@ -22,10 +22,10 @@ app.use(morgan.errorHandler);
 app.use(helmet());
 
 // parse json request body
-app.use(express.json());
+app.use(express.json({limit: '20mb'}));
 
 // parse urlencoded request body
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true, limit: '20mb'  }));
 
 // sanitize request data
 app.use(xss());

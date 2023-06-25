@@ -1,3 +1,9 @@
 module.exports.authValidation = require('./auth.validation');
 module.exports.userValidation = require('./user.validation');
 module.exports.accountValidation = require('./account.validation');
+module.exports.fieldValidation = require('./field.validation');
+module.exports.companyValidation = require('./company.validation');
+module.exports.contactValidation = require('./contact.validation');
+module.exports.jobValidation = require('./job.validation');
+module.exports.candidateValidation = require('./candidate.validation');
+module.exports.hotlistValidation = require('./hotlist.validation');

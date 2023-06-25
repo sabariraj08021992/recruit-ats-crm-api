@@ -3,7 +3,7 @@ const { objectId } = require('./custom.validation');
 
 const createAccount =  {
     body: Joi.object().keys({
-        account_name: Joi.string().required(),
+        account_name: Joi.string().required()
     }),
 };
 
@@ -42,6 +42,7 @@ const deleteAccount = {
 module.exports = {
     createAccount,
     getAllAccounts,
+    getAccountById,
     updateAccount,
     deleteAccount
 };

@@ -28,7 +28,7 @@ const createFields = {
   })
 };
 
-const getFields = {
+const getAllFields = {
     query: Joi.object().keys({
         sort_by: Joi.string(),
         limit: Joi.number().integer(),
@@ -36,16 +36,15 @@ const getFields = {
     }),
 };
 
-const getField = {
+const getFieldsByEntity = {
   params: Joi.object().keys({
-    entity: Joi.string().required().valid(...Object.values(entityTypes)),
+    entity_type: Joi.string().required().valid(...Object.values(entityTypes)),
   }),
 };
   
-
 module.exports = {
     createFields,
-    getFields,
-    getField
+    getAllFields,
+    getFieldsByEntity
 };
   

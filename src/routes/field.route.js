@@ -7,8 +7,8 @@ const router = express.Router();
 
 router.post("/", validate(fieldValidation.createFields), fieldController.createFields)
 
-router.get("/", validate(fieldValidation.getFields), fieldController.getFields)
+router.get("/", validate(fieldValidation.getAllFields), fieldController.getAllFields)
 
-router.get("/:entity", validate(fieldValidation.getField), fieldController.getFieldByEntity)
+router.get("/:entity_type", validate(fieldValidation.getFieldsByEntity), fieldController.getFieldsByEntity)
 
 module.exports = router;

@@ -1,0 +1,1179 @@
+{
+	"info": {
+		"_postman_id": "d1e43755-78e3-4610-9801-36b2a3f598fa",
+		"name": "Recruitment-ATS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Accounts",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"account_name\": \"DTech\",\n    \"account_currency_type\": \"Rupees\",\n    \"user_name\": \"Sabariraj\",\n    \"user_email\": \"test@info.com\",\n    \"user_password\": \"test@1234\",\n    \"user_role\":\"account_owner\",\n    \"associated_teams\":[]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/accounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDgxNTYwNWY4MjA3NWI5MDkzMDEyMWEiLCJpYXQiOjE2ODY5NzczNzIsImV4cCI6MTY4Njk3OTE3MiwidHlwZSI6ImFjY2VzcyJ9.KtNhJ5ex-lkY-2sS8AcUxxXg8d9rTVmISkOosTfBf3Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"account_name\": \"DTech\",\n    \"account_currency_type\": \"Rupees\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/accounts/64815605f82075b909301218",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"accounts",
+								"64815605f82075b909301218"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDgxNTYwNWY4MjA3NWI5MDkzMDEyMWEiLCJpYXQiOjE2ODY5NzczNzIsImV4cCI6MTY4Njk3OTE3MiwidHlwZSI6ImFjY2VzcyJ9.KtNhJ5ex-lkY-2sS8AcUxxXg8d9rTVmISkOosTfBf3Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/v1/accounts/64815605f82075b909301218",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"accounts",
+								"64815605f82075b909301218"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View All",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDgxNTYwNWY4MjA3NWI5MDkzMDEyMWEiLCJpYXQiOjE2ODY5Njc0NjIsImV4cCI6MTY4Njk2OTI2MiwidHlwZSI6ImFjY2VzcyJ9.AG45iIfuuS111ES6ix-wTyAwq0HsF7OPvZKIbVRwnhs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/v1/accounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDgxNTYwNWY4MjA3NWI5MDkzMDEyMWEiLCJpYXQiOjE2ODYzMjk0ODgsImV4cCI6MTY4NjMzMTI4OCwidHlwZSI6ImFjY2VzcyJ9.AOvvrMHIS1aagF7viDUVCC00hRi0kAxSOwRo50y7wPY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_name\":\"Ragavi\",\n    \"user_email\":\"ragavi@test.com\",\n    \"user_password\":\"test@1234\",\n    \"user_role\":\"admin\",\n    \"account_id\":\"64815605f82075b909301218\",\n    \"user_status\":\"Active\",\n    \"user_owner\":\"64815605f82075b90930121a\",\n    \"associated_teams\":[]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDgxNTYwNWY4MjA3NWI5MDkzMDEyMWEiLCJpYXQiOjE2ODYyMDgwODAsImV4cCI6MTY4NjIwOTg4MCwidHlwZSI6ImFjY2VzcyJ9.eacFVOALOPETQ0lwkG3aKcedvpT4lvtG2-dBV5Vil7g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_name\":\"Ragavi\",\n    \"user_email\":\"ragavi@test.com\",\n    \"user_password\":\"test@1234\",\n    \"user_role\":\"admin\",\n    \"account_id\":\"64815605f82075b909301218\",\n    \"user_status\":\"Active\",\n    \"user_owner\":\"64815605f82075b90930121a\",\n    \"associated_teams\":[]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDgxNTYwNWY4MjA3NWI5MDkzMDEyMWEiLCJpYXQiOjE2ODY5Njc0NjIsImV4cCI6MTY4Njk2OTI2MiwidHlwZSI6ImFjY2VzcyJ9.AG45iIfuuS111ES6ix-wTyAwq0HsF7OPvZKIbVRwnhs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_email\":\"test@info.com\",\n    \"user_password\":\"test@1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Companies",
+			"item": [
+				{
+					"name": "Show all companies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDgxNTYwNWY4MjA3NWI5MDkzMDEyMWEiLCJpYXQiOjE2ODYzMjk0ODgsImV4cCI6MTY4NjMzMTI4OCwidHlwZSI6ImFjY2VzcyJ9.AOvvrMHIS1aagF7viDUVCC00hRi0kAxSOwRo50y7wPY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"filterModel\":[\n        {\n            \"field_name\":\"company_is_pulic\",\n            \"filter_type\":\"is\",\n            \"filter\":true\n\n        }\n       \n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/companies/fetch",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"companies",
+								"fetch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show my Companies",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"filterModel\":[\n        {\n            \"field_name\":\"company_owner\",\n            \"filter_type\":\"is\",\n            \"filter\":\"64815605f82075b90930121a\"\n\n        }\n       \n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/companies/fetch",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"companies",
+								"fetch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Creates a new company",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDgxNTYwNWY4MjA3NWI5MDkzMDEyMWEiLCJpYXQiOjE2ODYzMjk0ODgsImV4cCI6MTY4NjMzMTI4OCwidHlwZSI6ImFjY2VzcyJ9.AOvvrMHIS1aagF7viDUVCC00hRi0kAxSOwRo50y7wPY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"company_name\":\"Sample_Company\",\n    \"company_type\":\"Software\",\n    \"company_website\":\"www.test.com\",\n    \"company_city\":\"Chennai\",\n    \"company_description\":\"sample description\",\n    \"company_address\":\"1/123, Solinganallur, Chennai\",\n    \"company_profile_linkedin\":\"test\",\n    \"company_profile_twitter\":\"test\",\n    \"company_profile_facebook\":\"test\",\n    \"company_stage\":\"Lead\",\n    \"company_parent\":null,\n    \"company_owner\":null,\n    \"company_is_deleted\":false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/companies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"companies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit a company by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDgxNTYwNWY4MjA3NWI5MDkzMDEyMWEiLCJpYXQiOjE2ODYzMjk0ODgsImV4cCI6MTY4NjMzMTI4OCwidHlwZSI6ImFjY2VzcyJ9.AOvvrMHIS1aagF7viDUVCC00hRi0kAxSOwRo50y7wPY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"company_name\":\"Chain-Sys\",\n    \"company_type\":\"Software\",\n    \"company_website\":\"www.chainsys.com\",\n    \"company_description\":\"Software company offers Data Migration Support\",\n    \"company_address\":\"1/123, Solinganallur, Chennai\",\n    \"company_profile_linkedin\":\"chainsys.linkedin.com\",\n    \"company_profile_twitter\":\"chainsys.twitter.com\",\n    \"company_profile_facebook\":\"chainsys.facebook.com\",\n    \"company_owner\":\"64815605f82075b90930121a\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/companies/64840802f615de8abb5dfab6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"companies",
+								"64840802f615de8abb5dfab6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find company by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDgxNTYwNWY4MjA3NWI5MDkzMDEyMWEiLCJpYXQiOjE2ODYzMjk0ODgsImV4cCI6MTY4NjMzMTI4OCwidHlwZSI6ImFjY2VzcyJ9.AOvvrMHIS1aagF7viDUVCC00hRi0kAxSOwRo50y7wPY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/v1/companies/64840802f615de8abb5dfab6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"companies",
+								"64840802f615de8abb5dfab6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a company by Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/v1/companies/64840802f615de8abb5dfab6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"companies",
+								"64840802f615de8abb5dfab6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BulkInsertCompanies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDgxNTYwNWY4MjA3NWI5MDkzMDEyMWEiLCJpYXQiOjE2ODYzMjk0ODgsImV4cCI6MTY4NjMzMTI4OCwidHlwZSI6ImFjY2VzcyJ9.AOvvrMHIS1aagF7viDUVCC00hRi0kAxSOwRo50y7wPY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n    \"companyArray\":[\n        {\n            \"company_name\": \"Chain-Sys\",\n            \"company_type\": \"Software\",\n            \"company_website\": \"www.dsoft.com\",\n            \"company_city\": \"Chennai\",\n            \"company_description\": \"CMS Support\",\n            \"company_address\": \"1/123, Solinganallur, Chennai\",\n            \"company_profile_linkedin\": \"chainsys.linkedin.com\",\n            \"company_profile_twitter\": \"chainsys.twitter.com\",\n            \"company_profile_facebook\": \"chainsys.facebook.com\",\n            \"company_stage\": \"Lead\",\n            \"company_parent\": null,\n            \"company_owner\": \"64815605f82075b90930121a\",\n            \"company_is_deleted\": false\n        },\n        {\n            \"company_name\": \"NewGen\",\n            \"company_type\": \"Software\",\n            \"company_website\": \"www.dsoft.com\",\n            \"company_city\": \"Chennai\",\n            \"company_description\": \"Tech Support\",\n            \"company_address\": \"1/123, Solinganallur, Chennai\",\n            \"company_profile_linkedin\": \"newgen.linkedin.com\",\n            \"company_profile_twitter\": \"newgen.twitter.com\",\n            \"company_profile_facebook\": \"newgen.facebook.com\",\n            \"company_stage\": \"Lead\",\n            \"company_parent\": null,\n            \"company_owner\": \"64815605f82075b90930121a\",\n            \"company_is_deleted\": false\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/companies/bulk_process/insertCompanies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"companies",
+								"bulk_process",
+								"insertCompanies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BulkupdateCompanies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDgxNTYwNWY4MjA3NWI5MDkzMDEyMWEiLCJpYXQiOjE2ODYzMjk0ODgsImV4cCI6MTY4NjMzMTI4OCwidHlwZSI6ImFjY2VzcyJ9.AOvvrMHIS1aagF7viDUVCC00hRi0kAxSOwRo50y7wPY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n    \"ids\":[\n       \"6492ba347bd6b74058c5f6e3\"\n    ],\n    \"set\": {\n        \"company_type\":\"Textile Manufacturing\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/companies/bulk_process/updateCompanies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"companies",
+								"bulk_process",
+								"updateCompanies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BulkdeleteCompanies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDgxNTYwNWY4MjA3NWI5MDkzMDEyMWEiLCJpYXQiOjE2ODYzMjk0ODgsImV4cCI6MTY4NjMzMTI4OCwidHlwZSI6ImFjY2VzcyJ9.AOvvrMHIS1aagF7viDUVCC00hRi0kAxSOwRo50y7wPY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n    \"ids\":[\n        \"6492ba347bd6b74058c5f6e2\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/companies/bulk_process/deleteCompanies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"companies",
+								"bulk_process",
+								"deleteCompanies"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contacts",
+			"item": [
+				{
+					"name": "Creates a new contact",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDgxNTYwNWY4MjA3NWI5MDkzMDEyMWEiLCJpYXQiOjE2ODYzMjk0ODgsImV4cCI6MTY4NjMzMTI4OCwidHlwZSI6ImFjY2VzcyJ9.AOvvrMHIS1aagF7viDUVCC00hRi0kAxSOwRo50y7wPY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"contact_first_name\":\"Ragavi\",\n    \"contact_last_name  \":\"Subhash\",\n    \"contact_associated_company\":\"64840802f615de8abb5dfab6\",\n    \"contact_designation\":\"HR Manager\",\n    \"contact_email\":\"ragavi462@gmail.com\",\n    \"contact_phone_num\":\"7010070371\",\n    \"contact_city\":\"Chennai\",\n    \"contact_locality\":\"Indian\",\n    \"contact_address\":\"C123, SBIOA Unity Enclave, Mambakkam, 600127\",\n    \"contact_profile_twitter\":\"ragavi@twitter.com\",\n    \"contact_profile_linkedin\":\"ragavi@linkedin.com\",\n    \"contact_profile_facebook\":\"ragavi@facebook.com\",\n    \"contact_profile_xing\":\"ragavi@xing.com\",\n    \"contact_stage\":\"Lead\",\n    \"contact_owner\":\"64818435598d2348b8a65c13\",\n    \"contact_is_deleted\":false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/contacts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"contacts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit a contact",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDgxNTYwNWY4MjA3NWI5MDkzMDEyMWEiLCJpYXQiOjE2ODYzMjk0ODgsImV4cCI6MTY4NjMzMTI4OCwidHlwZSI6ImFjY2VzcyJ9.AOvvrMHIS1aagF7viDUVCC00hRi0kAxSOwRo50y7wPY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"company_name\":\"Sample_Company\",\n    \"company_type\":\"Software\",\n    \"company_website\":\"www.test.com\",\n    \"company_city\":\"Chennai\",\n    \"company_description\":\"sample description\",\n    \"company_address\":\"1/123, Solinganallur, Chennai\",\n    \"company_profile_linkedin\":\"test\",\n    \"company_profile_twitter\":\"test\",\n    \"company_profile_facebook\":\"test\",\n    \"company_stage\":\"Lead\",\n    \"company_parent\":null,\n    \"company_owner\":null,\n    \"company_is_deleted\":false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/contacts/64840802f615de8abb5dfab6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"contacts",
+								"64840802f615de8abb5dfab6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find contact by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/v1/companies/64840802f615de8abb5dfab6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"companies",
+								"64840802f615de8abb5dfab6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show all contacts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDgxNTYwNWY4MjA3NWI5MDkzMDEyMWEiLCJpYXQiOjE2ODYzMjk0ODgsImV4cCI6MTY4NjMzMTI4OCwidHlwZSI6ImFjY2VzcyJ9.AOvvrMHIS1aagF7viDUVCC00hRi0kAxSOwRo50y7wPY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/contacts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"contacts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/v1/companies/64840802f615de8abb5dfab6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"companies",
+								"64840802f615de8abb5dfab6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Candidate",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDgxNTYwNWY4MjA3NWI5MDkzMDEyMWEiLCJpYXQiOjE2ODYzMjk0ODgsImV4cCI6MTY4NjMzMTI4OCwidHlwZSI6ImFjY2VzcyJ9.AOvvrMHIS1aagF7viDUVCC00hRi0kAxSOwRo50y7wPY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"candidate_first_name\":\"Ragavi\",\n    \"candidate_last_name  \":\"Subhash\",\n    \"candidate_email\":\"ragavi462@gmail.com\",\n    \"candidate_phone\":\"7010070371\",\n    \"candidate_city\":\"Chennai\",\n    \"candidate_locality\":\"India\",\n    \"candidate_address\":\"C123, SBIOA Unity Enclave, Mambakkam, 600127\",\n    \"candidate_willing_to_relocate\":true,\n    \"candidate_summary\":\"Fullstack developer having 5+ years of experience in web development\",\n    \"work_history\":[\n        {\n            \"candidate_title\":\"Paper Sales Executive\",\n            \"candidate_work_company_name\":\"Dunder Muffin\",\n            \"candidate_employment_type\":\"Permanent\",\n            \"candidate_company_type\":\"Software\",\n            \"candidate_work_location\":\"Chennai\",\n            \"candidate_salary\":200000,\n            \"candidate_is_currently_working\":true,\n            \"candidate_work_start_date\":\"2016-06-22\",\n            \"candidate_work_end_date\":\"\",\n            \"candidate_work_description\":\"Work as a Fullstack Developer\"\n        }\n     ],\n     \"education_history\":[\n         {\n             \"candidate_institute_name\":\"The University of Manchester\",\n             \"candidate_educational_qualification\":\"Masters in Computer Application\",\n             \"candidate_educational_specialization\":\"Public Finance\",\n             \"candidate_grade\":\"A+\",\n             \"candidate_education_location\":\"Pune Area, India\",\n             \"candidate_education_start_date\":\"2009-06-10\",\n             \"candidate_education_end_date\":\"2013-04-22\",\n             \"candidate_education_description\":\"Done Master's in Computer Application specialized in Networking\"\n         }\n     ],\n     \"candidate_last_organisation\":\"Dunder Muffin\",\n     \"candidate_specialization\":\"Java Developer\",\n     \"candidate_total_experience\":\"5 Year\",\n     \"candidate_relevant_experience\":\"3 Year\",\n     \"candidate_salary_type\":\"\",\n     \"candidate_currency_type\":\"Rupees\",\n     \"candidate_current_salary\": 200000,\n     \"candidate_salary_expectation\":300000,\n     \"candidate_current_status\":\"Employed\",\n     \"candidate_notice_period\":20,\n     \"candidate_available_from\":\"2023-07-20\",\n     \"candidate_skills\":[\n         \"Python\",\n         \"Angular\",\n         \"Node js\"\n     ],\n    \"candidate_profile_twitter\":\"ragavi@twitter.com\",\n    \"candidate_profile_linkedin\":\"ragavi@linkedin.com\",\n    \"candidate_profile_facebook\":\"ragavi@facebook.com\",\n    \"candidate_profile_github\":\"ragavi@facebook.com\",\n    \"candidate_profile_xing\":\"ragavi@xing.com\",\n    \"candidate_source\":\"LinkedIn\",\n    \"candidate_owner\":\"64818435598d2348b8a65c13\",\n    \"candidate_is_deleted\":false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/candidates",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"candidates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_by_id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDgxNTYwNWY4MjA3NWI5MDkzMDEyMWEiLCJpYXQiOjE2ODYzMjk0ODgsImV4cCI6MTY4NjMzMTI4OCwidHlwZSI6ImFjY2VzcyJ9.AOvvrMHIS1aagF7viDUVCC00hRi0kAxSOwRo50y7wPY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"company_name\":\"Sample_Company\",\n    \"company_type\":\"Software\",\n    \"company_website\":\"www.test.com\",\n    \"company_city\":\"Chennai\",\n    \"company_description\":\"sample description\",\n    \"company_address\":\"1/123, Solinganallur, Chennai\",\n    \"company_profile_linkedin\":\"test\",\n    \"company_profile_twitter\":\"test\",\n    \"company_profile_facebook\":\"test\",\n    \"company_stage\":\"Lead\",\n    \"company_parent\":null,\n    \"company_owner\":null,\n    \"company_is_deleted\":false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/companies/64840802f615de8abb5dfab6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"companies",
+								"64840802f615de8abb5dfab6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view_by_id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/v1/companies/64840802f615de8abb5dfab6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"companies",
+								"64840802f615de8abb5dfab6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view_all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/v1/candidates",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"candidates"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Fields",
+			"item": [
+				{
+					"name": "New Request",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/fields",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"fields"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Hotlist",
+			"item": [
+				{
+					"name": "Create Hotlist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"entity_type\":\"company\",\n    \"hotlist_name\":\"sample_2\",\n    \"hotlist_owner\":\"64815605f82075b90930121a\",\n    \"associated_companies\":[\n        \"64840802f615de8abb5dfab6\"\n    ],\n    \"hotlist_is_shared\":true,\n    \"hotlist_created_by\":\"64815605f82075b90930121a\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/hotlists/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"hotlists",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Hotlist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n    \"hotlist_name\":\"sample_update_1\",\n    \"hotlist_is_shared\":false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/hotlists/649783c64140562ba76cc5ca",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"hotlists",
+								"649783c64140562ba76cc5ca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetch hotlist by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/hotlists/64978161114b4ce68a4642a9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"hotlists",
+								"64978161114b4ce68a4642a9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete Hotlist",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/hotlists/649788d8ed621025418eabab",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"hotlists",
+								"649788d8ed621025418eabab"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show all hotlist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"filterModel\":[\n        {\n            \"field_name\":\"hotlist_is_shared\",\n            \"filter_type\":\"is\",\n            \"filter\":true\n\n        }\n       \n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/hotlists/fetch",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"hotlists",
+								"fetch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show my hotlist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"filterModel\":[\n        {\n            \"field_name\":\"hotlist_owner\",\n            \"filter_type\":\"is\",\n            \"filter\":\"64815605f82075b90930121a\"\n\n        }\n       \n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/hotlists/fetch",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"hotlists",
+								"fetch"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Hotlist Copy",
+			"item": [
+				{
+					"name": "Create Hotlist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"entity_type\":\"company\",\n    \"hotlist_name\":\"sample\",\n    \"hotlist_owner\":\"64815605f82075b90930121a\",\n    \"associated_companies\":[\n        \"64840802f615de8abb5dfab6\"\n    ],\n    \"hotlist_is_shared\":true,\n    \"hotlist_created_by\":\"64815605f82075b90930121a\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/hotlists/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"hotlists",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Hotlist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"entity_type\":\"company\",\n    \"hotlist_name\":\"sample\",\n    \"hotlist_owner\":\"64815605f82075b90930121a\",\n    \"associated_companies\":[\n        \"64840802f615de8abb5dfab6\"\n    ],\n    \"hotlist_is_shared\":true,\n    \"hotlist_created_by\":\"64815605f82075b90930121a\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/hotlists/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"hotlists",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

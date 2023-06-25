@@ -16,12 +16,12 @@ const createCompany = async (body) => {
  * Query for fields
  * @param {Object} filter - Mongo filter
  * @param {Object} options - Query options
- * @param {string} [options.sortBy] - Sort option in the format: sortField:(desc|asc)
+ * @param {string} [options.sort_by] - Sort option in the format: sortField:(desc|asc)
  * @param {number} [options.limit] - Maximum number of results per page (default = 10)
  * @param {number} [options.page] - Current page (default = 1)
  * @returns {Promise<QueryResult>}
  */
-const queryCompanies = async (filter, options) => {
+const fetchCompanies = async (filter, options) => {
     const Company = await getCompanyModel()
     const companies = Company.paginate(filter, options);
     return companies;
@@ -58,7 +58,7 @@ const updateCompanyById = async (companyId, updateBody) => {
 };
 
 /**
- * Delete user by id
+ * Delete company by id
  * @param {ObjectId} companyId
  * @returns {Promise<Company>}
  */
@@ -71,11 +71,71 @@ const deleteCompanyById = async (companyId) => {
     return company;
 };
 
+/**
+ * BulkInsertCompanies
+ * @param {Array} companyArray
+ * @returns {Promise<Company>}
+ */
+const bulkInsertCompanies = async (companyArray) => {
+    const Company = await getCompanyModel();
+    const response = Company.insertMany(
+        companyArray,
+        {
+            writeConcern:true,
+            ordered:false
+        }
+    )
+    // console.log(response)
+    return response
+};
+
+/**
+ * bulkUpdateCompanies
+ * @param {Object} inputArr
+ * @returns {Promise<Company>}
+ */
+const bulkUpdateCompanies = async (obj) => {
+    const Company = await getCompanyModel();
+    const response = Company.updateMany(
+        {
+            _id: {$in: obj['ids']}
+        },
+        {
+            $set: obj['set'],
+        },
+        {
+            writeConcern:true
+        }
+    )
+    return response
+};
+
+/**
+ * bulkDeleteCompanies
+ * @param {inputArr} inputArr
+ * @returns {Promise<Company>}
+ */
+const bulkDeleteCompanies = async (obj) => {
+    const Company = await getCompanyModel();
+    const response = Company.deleteMany(
+        {
+            _id: {$in: obj['ids']}
+        },
+        {
+            writeConcern:true
+        }
+    )
+    return response
+};
+
 module.exports = {
     createCompany,
-    queryCompanies,
+    fetchCompanies,
     getCompanyById,
     updateCompanyById,
-    deleteCompanyById
+    deleteCompanyById,
+    bulkInsertCompanies,
+    bulkUpdateCompanies,
+    bulkDeleteCompanies
 };
   

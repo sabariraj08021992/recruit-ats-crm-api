@@ -9,20 +9,20 @@ const createFields = async (req, res) => {
     res.status(httpStatus.CREATED).send(field);
 }
 
-const getFields = async (req, res) => {
-    const filter = pick(req.query, ['function', 'section']);
-    const options = pick(req.query, ['sortBy', 'limit', 'page']);
-    const result = await fieldService.queryFields(filter, options);
+const getAllFields = async (req, res) => {
+    const filter = pick(req.query, []);
+    const options = pick(req.query, ['sort_by', 'limit', 'page']);
+    const result = await fieldService.getAllFields(filter, options);
     res.send(result);
 };
 
-const getFieldByEntity = async (req, res) => {
-    const result = await fieldService.getFields(req.params.entity);
+const getFieldsByEntity = async (req, res) => {
+    const result = await fieldService.getFieldsByEntity(req.params.entity_type);
     res.send(result);
 };
 
 module.exports = {
     createFields,
-    getFields,
-    getFieldByEntity
+    getAllFields,
+    getFieldsByEntity
 }

@@ -3,6 +3,7 @@ const validate = require('../middlewares/validate');
 const candidateController = require('../controllers/candidate.controller');
 const candidateValidation = require('../validations/candidate.validation');
 
+
 const router = express.Router();
 
 router.post("/", candidateValidation.createCandidate, candidateController.createCandidate)

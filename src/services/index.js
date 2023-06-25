@@ -8,3 +8,4 @@ module.exports.candidateService = require('./candidate.service');
 module.exports.contactService = require('./contact.service');
 module.exports.companyService = require('./company.service');
 module.exports.jobService = require('./job.service');
+module.exports.hotlistService = require('./hotlist.service');

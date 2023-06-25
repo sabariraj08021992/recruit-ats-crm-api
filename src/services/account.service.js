@@ -60,7 +60,7 @@ const getAccountById = async (accountId) => {
  * @returns {Promise<User>}
  */
 const updateAccountById = async (accountId, updateObj) => {
-  const account = await getAccountById(account_id);
+  const account = await getAccountById(accountId);
 
   if (updateObj.account_name && (await Account.isAccountNameTaken(updateObj.account_name,accountId))) {
     throw new ApiError(httpStatus.BAD_REQUEST, 'Account already taken');

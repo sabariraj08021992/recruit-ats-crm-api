@@ -8,7 +8,7 @@ const candidateRoute = require('./candidate.route');
 const contactRoute = require('./contact.route');
 const companyRoute = require('./company.route');
 const jobRoute = require('./job.route');
-
+const hotlistRoute = require('./hotlist.route');
 
 router.use('/accounts', accountRoute);
 router.use('/auth', authRoute);
@@ -18,6 +18,7 @@ router.use('/candidates', candidateRoute);
 router.use('/companies', companyRoute);
 router.use('/contacts', contactRoute);
 router.use('/jobs', jobRoute);
+router.use('/hotlists',hotlistRoute);
 
 
 module.exports = router;
